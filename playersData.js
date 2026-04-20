@@ -1,6 +1,7 @@
-const players = [
+const playersData = [
   {
     id: 1,
+    initials: "LD",
     name: "Luka Doncic",
     team: "LAL",
     position: "G",
@@ -8,6 +9,7 @@ const players = [
   },
   {
     id: 2,
+    initials: "SG",
     name: "Shai Gilgeous-Alexander",
     team: "OKC",
     position: "G",
@@ -15,6 +17,7 @@ const players = [
   },
   {
     id: 3,
+    initials: "AE",
     name: "Anthony Edwards",
     team: "MIN",
     position: "G",
@@ -22,6 +25,7 @@ const players = [
   },
   {
     id: 4,
+    initials: "JB",
     name: "Jaylen Brown",
     team: "BOS",
     position: "G",
@@ -29,6 +33,7 @@ const players = [
   },
   {
     id: 5,
+    initials: "TM",
     name: "Tyrese Maxey",
     team: "PHI",
     position: "G",
@@ -36,6 +41,7 @@ const players = [
   },
   {
     id: 6,
+    initials: "KL",
     name: "Kawhi Leonard",
     team: "LAC",
     position: "F",
@@ -43,6 +49,7 @@ const players = [
   },
   {
     id: 7,
+    initials: "DM",
     name: "Donovan Mitchell",
     team: "CLE",
     position: "G",
@@ -50,6 +57,7 @@ const players = [
   },
   {
     id: 8,
+    initials: "NJ",
     name: "Nikola Jokic",
     team: "DEN",
     position: "C",
@@ -57,6 +65,7 @@ const players = [
   },
   {
     id: 9,
+    initials: "DB",
     name: "Devin Booker",
     team: "PHX",
     position: "G",
@@ -64,6 +73,7 @@ const players = [
   },
   {
     id: 10,
+    initials: "JB",
     name: "Jalen Brunson",
     team: "NY",
     position: "G",
@@ -71,6 +81,7 @@ const players = [
   },
   {
     id: 11,
+    initials: "KD",
     name: "Kevin Durant",
     team: "HOU",
     position: "F",
@@ -78,6 +89,7 @@ const players = [
   },
   {
     id: 12,
+    initials: "JM",
     name: "Jamal Murray",
     team: "DEN",
     position: "G",
@@ -85,6 +97,7 @@ const players = [
   },
   {
     id: 13,
+    initials: "VW",
     name: "Victor Wembanyama",
     team: "SA",
     position: "F",
@@ -92,6 +105,7 @@ const players = [
   },
   {
     id: 14,
+    initials: "DA",
     name: "Deni Avdija",
     team: "POR",
     position: "F",
@@ -99,6 +113,7 @@ const players = [
   },
   {
     id: 15,
+    initials: "PS",
     name: "Pascal Siakam",
     team: "IND",
     position: "F",
@@ -106,6 +121,7 @@ const players = [
   },
   {
     id: 16,
+    initials: "CC",
     name: "Cade Cunningham",
     team: "DET",
     position: "G",
@@ -113,6 +129,7 @@ const players = [
   },
   {
     id: 17,
+    initials: "JH",
     name: "James Harden",
     team: "LAC/CLE",
     position: "G",
@@ -120,6 +137,7 @@ const players = [
   },
   {
     id: 18,
+    initials: "JJ",
     name: "Jalen Johnson",
     team: "ATL",
     position: "F",
@@ -127,6 +145,7 @@ const players = [
   },
   {
     id: 19,
+    initials: "PB",
     name: "Paolo Banchero",
     team: "ORL",
     position: "F",
@@ -134,6 +153,7 @@ const players = [
   },
   {
     id: 20,
+    initials: "NP",
     name: "Norman Powell",
     team: "MIA",
     position: "G",
@@ -141,6 +161,7 @@ const players = [
   },
   {
     id: 21,
+    initials: "TM",
     name: "Trey Murphy III",
     team: "NO",
     position: "F",
@@ -148,6 +169,7 @@ const players = [
   },
   {
     id: 22,
+    initials: "BI",
     name: "Brandon Ingram",
     team: "TOR",
     position: "F",
@@ -155,6 +177,7 @@ const players = [
   },
   {
     id: 23,
+    initials: "JR",
     name: "Julius Randle",
     team: "MIN",
     position: "F",
@@ -162,6 +185,7 @@ const players = [
   },
   {
     id: 24,
+    initials: "CF",
     name: "Cooper Flagg",
     team: "DAL",
     position: "F",
@@ -169,6 +193,7 @@ const players = [
   },
   {
     id: 25,
+    initials: "ZW",
     name: "Zion Williamson",
     team: "NO",
     position: "F",
@@ -176,6 +201,7 @@ const players = [
   },
   {
     id: 26,
+    initials: "LJ",
     name: "LeBron James",
     team: "LAL",
     position: "F",
@@ -183,6 +209,7 @@ const players = [
   },
   {
     id: 27,
+    initials: "NA",
     name: "Nickeil Alexander-Walker",
     team: "ATL",
     position: "G",
@@ -190,6 +217,7 @@ const players = [
   },
   {
     id: 28,
+    initials: "AS",
     name: "Alperen Sengun",
     team: "HOU",
     position: "C",
@@ -197,6 +225,7 @@ const players = [
   },
   {
     id: 29,
+    initials: "BM",
     name: "Brandon Miller",
     team: "CHA",
     position: "F",
@@ -204,6 +233,7 @@ const players = [
   },
   {
     id: 30,
+    initials: "BA",
     name: "Bam Adebayo",
     team: "MIA",
     position: "C",
@@ -211,6 +241,7 @@ const players = [
   },
   {
     id: 31,
+    initials: "DB",
     name: "Desmond Bane",
     team: "ORL",
     position: "G",
@@ -218,6 +249,7 @@ const players = [
   },
   {
     id: 32,
+    initials: "LB",
     name: "LaMelo Ball",
     team: "CHA",
     position: "G",
@@ -225,6 +257,7 @@ const players = [
   },
   {
     id: 33,
+    initials: "KT",
     name: "Karl-Anthony Towns",
     team: "NY",
     position: "C",
@@ -232,6 +265,7 @@ const players = [
   },
   {
     id: 34,
+    initials: "JD",
     name: "Jalen Duren",
     team: "DET",
     position: "C",
@@ -239,6 +273,7 @@ const players = [
   },
   {
     id: 35,
+    initials: "CJ",
     name: "CJ McCollum",
     team: "ATL/WSH",
     position: "G",
@@ -246,6 +281,7 @@ const players = [
   },
   {
     id: 36,
+    initials: "DF",
     name: "De'Aaron Fox",
     team: "SA",
     position: "G",
@@ -253,6 +289,7 @@ const players = [
   },
   {
     id: 37,
+    initials: "KK",
     name: "Kon Knueppel",
     team: "CHA",
     position: "G",
@@ -260,6 +297,7 @@ const players = [
   },
   {
     id: 38,
+    initials: "DD",
     name: "DeMar DeRozan",
     team: "SAC",
     position: "G",
@@ -267,6 +305,7 @@ const players = [
   },
   {
     id: 39,
+    initials: "AT",
     name: "Amen Thompson",
     team: "HOU",
     position: "G",
@@ -274,6 +313,7 @@ const players = [
   },
   {
     id: 40,
+    initials: "EM",
     name: "Evan Mobley",
     team: "CLE",
     position: "C",
@@ -281,6 +321,7 @@ const players = [
   },
   {
     id: 41,
+    initials: "SB",
     name: "Scottie Barnes",
     team: "TOR",
     position: "F",
@@ -288,6 +329,7 @@ const players = [
   },
   {
     id: 42,
+    initials: "SB",
     name: "Saddiq Bey",
     team: "NO",
     position: "G",
@@ -295,6 +337,7 @@ const players = [
   },
   {
     id: 43,
+    initials: "RR",
     name: "Ryan Rollins",
     team: "MIL",
     position: "G",
@@ -302,6 +345,7 @@ const players = [
   },
   {
     id: 44,
+    initials: "CH",
     name: "Chet Holmgren",
     team: "OKC",
     position: "C",
@@ -309,6 +353,7 @@ const players = [
   },
   {
     id: 45,
+    initials: "MB",
     name: "Miles Bridges",
     team: "CHA",
     position: "F",
@@ -316,6 +361,7 @@ const players = [
   },
   {
     id: 46,
+    initials: "PP",
     name: "Payton Pritchard",
     team: "BOS",
     position: "G",
@@ -323,6 +369,7 @@ const players = [
   },
   {
     id: 47,
+    initials: "OA",
     name: "OG Anunoby",
     team: "NY",
     position: "F",
@@ -330,6 +377,7 @@ const players = [
   },
   {
     id: 48,
+    initials: "SC",
     name: "Stephon Castle",
     team: "SA",
     position: "G",
@@ -337,6 +385,7 @@ const players = [
   },
   {
     id: 49,
+    initials: "DW",
     name: "Derrick White",
     team: "BOS",
     position: "G",
@@ -344,6 +393,7 @@ const players = [
   },
   {
     id: 50,
+    initials: "IQ",
     name: "Immanuel Quickley",
     team: "TOR",
     position: "G",

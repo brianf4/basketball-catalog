@@ -2,14 +2,19 @@ html,
 body {
     margin: 0;
     padding: 0;
+    color: white;
+}
+body {
+    background-color: black;
 }
 /* HEADER */
 header {
-    border: 2px solid black;
+    border: 2px solid white;
 }
 /* MAIN */
 main {
-    border: 2px solid black;
+    background-color: #30302e;
+    border: 2px solid white;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -27,7 +32,7 @@ main {
 .stats {
     padding: 10px;
     display: flex;
-    border: 2px solid black;
+    border: 2px solid white;
     justify-content: center;
     column-gap: 12px;
 }
@@ -38,7 +43,7 @@ main {
 
 .player1,
 .player2,
-.stat {
+.players-stat {
     border: 2px solid blueviolet;
     display: flex;
     flex-direction: column;
@@ -46,23 +51,99 @@ main {
 }
 
 .winner {
-    border: 2px solid mediumslateblue;
+    background-color: #262624;
+    border: 2px solid darkgray;
     display: flex;
     justify-content: space-around;
 }
 /*PLAYERS CATALOG*/
 .player-catalog {
-    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    padding: 18px;
 }
 
 .search-bar {
-    border: 2px solid darkorange;
+    background-color: #30302e;
+    border: 2px solid darkgray;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.role {
+    padding: 6px 26px;
+    border: 1px solid darkgray;
+    border-radius: 12px;
+    background-color: #262624;
+    color: white;
+}
+
+.role.active {
+    background: #e6f1fb;
+    color: #3c3489;
+    border-color: #378add;
+}
+
+.player-catalog > div:last-child {
+    border: 2px solid greenyellow;
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+    padding: 20px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+}
+
+.avatar-info {
     display: flex;
     justify-content: space-around;
 }
 
+.avatar-info > div {
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+}
+
+.avatar {
+    border: 0.5px solid darkgray;
+    border-radius: 50%;
+    align-self: center;
+    padding: 10px;
+    background-color: #eeedfe;
+    color: #3c3489;
+}
+
 .player-card {
-    border: 2px solid darkmagenta;
+    background-color: #30302e;
+    border: 0.5px solid darkgray;
+    border-radius: 12px;
     padding: 8px;
     width: max-content;
+    padding: 12px;
+}
+
+.player-stats > div {
+    border: 2px solid skyblue;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+}
+
+.stat span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px;
+}
+
+.player-catalog {
+    border: 2px solid white;
 }
