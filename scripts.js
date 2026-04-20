@@ -201,3 +201,5 @@ function activeCButton() {
   CButton.classList.add("active");
   renderCards(CButton.innerHTML);
 }
+
+renderCards("All");
