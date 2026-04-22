@@ -10,7 +10,7 @@ const playersData = [
   {
     id: 2,
     initials: "SG",
-    name: "Shai Gilgeous-Alexander",
+    name: "Shai G-Alexander",
     team: "OKC",
     position: "G",
     stats: { pts: 31.1, reb: 4.3, ast: 6.6, stl: 1.4, blk: 0.8, to: 2.2 },

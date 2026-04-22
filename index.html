@@ -5,43 +5,43 @@
         <meta
             name="description"
             content="A Catalog of Shows Set in Los Angeles"
+            charset="UTF-8"
         />
         <link rel="stylesheet" href="style.css" />
     </head>
 
     <body>
-        <header class="main-header">
-            <span>NBA Player catalog</span>
-        </header>
         <main>
             <span>Head-to-head-comparison</span>
             <div class="pvp">
-                <div>
-                    <span class="avatar">NJ</span>
+                <div class="p1">
+                    <button id="remove-p1" class="remove-btn">x</button>
+                    <span class="p1-avatar"></span>
                     <div>
-                        <span>Nikola Jokic</span>
-                        <span>DEN • C</span>
+                        <span class="p1-name"></span>
+                        <span class="p1-team-pos"></span>
                     </div>
                 </div>
                 <div>
-                    <span>vs</span>
+                    <span class="vs">vs</span>
                 </div>
-                <div>
-                    <span class="avatar">NJ</span>
+                <div class="p2">
+                    <button id="remove-p2" class="remove-btn">x</button>
+                    <span class="p2-avatar"></span>
                     <div>
-                        <span>Nikola Jokic</span>
-                        <span>DEN • C</span>
+                        <span class="p2-name"></span>
+                        <span class="p2-team-pos"></span>
                     </div>
                 </div>
             </div>
             <div class="stats">
                 <div class="player1">
-                    <span>10</span>
-                    <span>12</span>
-                    <span>8</span>
-                    <span>5</span>
-                    <span>0.5</span>
-                    <span>4.0</span>
+                    <span class="p1-pts">x</span>
+                    <span class="p1-reb">x</span>
+                    <span class="p1-ast">x</span>
+                    <span class="p1-stl">x</span>
+                    <span class="p1-blk">x</span>
+                    <span class="p1-to">x</span>
                 </div>
                 <div class="players-stat">
                     <span>PTS</span>
@@ -52,36 +52,38 @@
                     <span>TO</span>
                 </div>
                 <div class="player2">
-                    <span>10</span>
-                    <span>12</span>
-                    <span>8</span>
-                    <span>5</span>
-                    <span>0.5</span>
-                    <span>4.0</span>
+                    <span class="p2-pts">x</span>
+                    <span class="p2-reb">x</span>
+                    <span class="p2-ast">x</span>
+                    <span class="p2-stl">x</span>
+                    <span class="p2-blk">x</span>
+                    <span class="p2-to">x</span>
                 </div>
             </div>
             <div class="winner">
-                <span>Winner (x of x categories)</span>
-                <span>Joker</span>
+                <span class="ptsOfWinner"></span>
+                <span class="nameOfWinner"></span>
             </div>
         </main>
         <div class="player-catalog">
             <div class="search-bar">
-                <span>NBA player catalog</span>
-                <input
-                    type="text"
-                    name="Search players"
-                    placeholder="Search players..."
-                />
-                <button id="All" class="role active">All</button>
-                <button id="G" class="role">G</button>
-                <button id="F" class="role">F</button>
-                <button id="C" class="role">C</button>
+                <span>NBA player catalog 🏀</span>
+                <div>
+                    <!--<input
+                        type="text"
+                        name="Search players"
+                        placeholder="Search players..."
+                    />-->
+                    <button id="All" class="role active">All</button>
+                    <button id="G" class="role">G</button>
+                    <button id="F" class="role">F</button>
+                    <button id="C" class="role">C</button>
+                </div>
             </div>
             <div>
-                <span
-                    >50 players - 2025-26 season - Click a card to select for
-                    comparison</span
+                <span class="clickCompare"
+                    ><span class="numOfPlayers">50</span> players - 2025-26
+                    season - Click a card to select for comparison</span
                 >
                 <div class="card-container"></div>
             </div>

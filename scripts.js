@@ -23,12 +23,12 @@
  *
  */
 
-const FRESH_PRINCE_URL =
-  "https://upload.wikimedia.org/wikipedia/en/3/33/Fresh_Prince_S1_DVD.jpg";
-const CURB_POSTER_URL =
-  "https://m.media-amazon.com/images/M/MV5BZDY1ZGM4OGItMWMyNS00MDAyLWE2Y2MtZTFhMTU0MGI5ZDFlXkEyXkFqcGdeQXVyMDc5ODIzMw@@._V1_FMjpg_UX1000_.jpg";
-const EAST_LOS_HIGH_POSTER_URL =
-  "https://static.wikia.nocookie.net/hulu/images/6/64/East_Los_High.jpg";
+// const FRESH_PRINCE_URL =
+//   "https://upload.wikimedia.org/wikipedia/en/3/33/Fresh_Prince_S1_DVD.jpg";
+// const CURB_POSTER_URL =
+//   "https://m.media-amazon.com/images/M/MV5BZDY1ZGM4OGItMWMyNS00MDAyLWE2Y2MtZTFhMTU0MGI5ZDFlXkEyXkFqcGdeQXVyMDc5ODIzMw@@._V1_FMjpg_UX1000_.jpg";
+// const EAST_LOS_HIGH_POSTER_URL =
+//   "https://static.wikia.nocookie.net/hulu/images/6/64/East_Los_High.jpg";
 
 // This is an array of strings (TV show titles)
 
@@ -43,7 +43,7 @@ const EAST_LOS_HIGH_POSTER_URL =
 
 // This function adds cards the page to display the data in the array
 // function showCards() {
-//   const cardContainer = document.getElementById("card-container");
+//   const cardContainer = document.querySelector("card-container");
 //   cardContainer.innerHTML = "";
 //   const templateCard = document.querySelector(".card");
 
@@ -99,16 +99,22 @@ const EAST_LOS_HIGH_POSTER_URL =
 // }
 
 const players = document.querySelector(".card-container");
-const buttons = document.querySelectorAll(".role");
-
-// playersData variable is accessed globally via playersData.js <script src="playersData.js"></script>
-// for (let i = 0; i < playersData.length; i++) {}
+const AllButton = document.querySelector("#All");
+const GButton = document.querySelector("#G");
+const FButton = document.querySelector("#F");
+const CButton = document.querySelector("#C");
+// let cardContainerElement = document.querySelector(".card-container");
+let cardsInContainer = players.querySelectorAll(".player-card");
+let player1 = null;
+let player2 = null;
+let p1Points = 0;
+let p2Points = 0;
+let filtered = [];
 
 function renderCards(filter) {
   players.innerHTML = "";
 
-  let filtered = [];
-
+  // playersData variable is accessed globally via playersData.js <script src="playersData.js"></script>
   if (filter === "All") {
     filtered = playersData;
   } else {
@@ -116,7 +122,7 @@ function renderCards(filter) {
   }
 
   for (let i = 0; i < filtered.length; i++) {
-    let card = `<div class="player-card">
+    let card = `<div class="player-card" data-id="${filtered[i].id}">
         <div class="avatar-info">
             <span class="avatar">${filtered[i].initials}</span>
             <div>
@@ -157,12 +163,21 @@ function renderCards(filter) {
     </div>`;
     players.innerHTML += card;
   }
+
+  document.querySelector(".numOfPlayers").textContent = filtered.length;
+
+  cardsInContainer = players.querySelectorAll(".player-card");
+  for (let i = 0; i < cardsInContainer.length; i++) {
+    cardsInContainer[i].addEventListener("click", () => {
+      console.log(cardsInContainer[i].dataset.id);
+      assignPlayer(filtered[i]);
+      console.log(`Player1: ${player1.name}`);
+      console.log(`Player2: ${player2}`);
+    });
+  }
 }
 
-const AllButton = document.querySelector("#All");
-const GButton = document.querySelector("#G");
-const FButton = document.querySelector("#F");
-const CButton = document.querySelector("#C");
+renderCards("All");
 
 AllButton.addEventListener("click", activeAllButton);
 GButton.addEventListener("click", activeGButton);
@@ -182,7 +197,6 @@ function activeGButton() {
   CButton.classList.remove("active");
   AllButton.classList.remove("active");
   GButton.classList.add("active");
-  console.log(GButton.innerHTML);
   renderCards(GButton.innerHTML);
 }
 
@@ -202,4 +216,110 @@ function activeCButton() {
   renderCards(CButton.innerHTML);
 }
 
-renderCards("All");
+function assignPlayer(player) {
+  if (player1 === null) {
+    player1 = player;
+  } else if (player2 === null) {
+    player2 = player;
+  } else {
+    return;
+  }
+  updateComparison();
+}
+
+function updateComparison() {
+  if (player1) {
+    document.querySelector(".p1-avatar").textContent = player1.initials;
+    document.querySelector(".p1-name").textContent = player1.name;
+    document.querySelector(".p1-team-pos").textContent =
+      `${player1.team} • ${player1.position}`;
+    document.querySelector(".p1-pts").textContent = player1.stats.pts;
+    document.querySelector(".p1-reb").textContent = player1.stats.reb;
+    document.querySelector(".p1-ast").textContent = player1.stats.ast;
+    document.querySelector(".p1-stl").textContent = player1.stats.stl;
+    document.querySelector(".p1-blk").textContent = player1.stats.blk;
+    document.querySelector(".p1-to").textContent = player1.stats.to;
+  } else {
+    document.querySelector(".p1-avatar").textContent = "";
+    document.querySelector(".p1-name").textContent = "";
+    document.querySelector(".p1-team-pos").textContent = "";
+    document.querySelector(".p1-pts").textContent = "x";
+    document.querySelector(".p1-reb").textContent = "x";
+    document.querySelector(".p1-ast").textContent = "x";
+    document.querySelector(".p1-stl").textContent = "x";
+    document.querySelector(".p1-blk").textContent = "x";
+    document.querySelector(".p1-to").textContent = "x";
+  }
+
+  if (player2) {
+    document.querySelector(".p2-avatar").textContent = player2.initials;
+    document.querySelector(".p2-name").textContent = player2.name;
+    document.querySelector(".p2-team-pos").textContent =
+      `${player2.team} • ${player2.position}`;
+    document.querySelector(".p2-pts").textContent = player2.stats.pts;
+    document.querySelector(".p2-reb").textContent = player2.stats.reb;
+    document.querySelector(".p2-ast").textContent = player2.stats.ast;
+    document.querySelector(".p2-stl").textContent = player2.stats.stl;
+    document.querySelector(".p2-blk").textContent = player2.stats.blk;
+    document.querySelector(".p2-to").textContent = player2.stats.to;
+  } else {
+    document.querySelector(".p2-avatar").textContent = "";
+    document.querySelector(".p2-name").textContent = "";
+    document.querySelector(".p2-team-pos").textContent = "";
+    document.querySelector(".p2-pts").textContent = "x";
+    document.querySelector(".p2-reb").textContent = "x";
+    document.querySelector(".p2-ast").textContent = "x";
+    document.querySelector(".p2-stl").textContent = "x";
+    document.querySelector(".p2-blk").textContent = "x";
+    document.querySelector(".p2-to").textContent = "x";
+  }
+
+  document.getElementById("remove-p1").addEventListener("click", () => {
+    player1 = null;
+    updateComparison();
+  });
+
+  document.getElementById("remove-p2").addEventListener("click", () => {
+    player2 = null;
+    updateComparison();
+  });
+
+  const winnerElementContainer = document.querySelector(".winner");
+  // If both players exist and are not null
+  if (player1 !== null && player2 !== null) {
+    const stat = ["pts", "reb", "ast", "stl", "blk", "to"];
+    p1Points = 0;
+    p2Points = 0;
+
+    for (let i = 0; i < stat.length; i++) {
+      let p1Category = player1.stats[stat[i]];
+      let p2Category = player2.stats[stat[i]];
+
+      if (stat[i] === "to") {
+        if (p1Category < p2Category) {
+          p1Points++;
+        } else if (p2Category < p1Category) {
+          p2Points++;
+        }
+      } else {
+        if (p1Category > p2Category) {
+          p1Points++;
+        } else if (p2Category > p1Category) {
+          p2Points++;
+        }
+      }
+    }
+
+    if (p1Points > p2Points) {
+      winnerElementContainer.querySelector(".ptsOfWinner").textContent =
+        `Winner (${p1Points} of 6 categories)`;
+      winnerElementContainer.querySelector(".nameOfWinner").textContent =
+        `${player1.name}`;
+    } else {
+      winnerElementContainer.querySelector(".ptsOfWinner").textContent =
+        `Winner (${p2Points} of 6 categories)`;
+      winnerElementContainer.querySelector(".nameOfWinner").textContent =
+        `${player2.name}`;
+    }
+  }
+}

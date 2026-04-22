@@ -6,6 +6,7 @@ body {
 }
 body {
     background-color: black;
+    padding: 0px 80px;
 }
 /* HEADER */
 header {
@@ -15,69 +16,152 @@ header {
 main {
     background-color: #30302e;
     border: 2px solid white;
-    padding: 10px;
+    border-radius: 12px;
+    padding: 4px 18px;
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
+}
+
+main span {
+    font-size: 22px;
 }
 
 .pvp {
-    border: 2px solid red;
-    padding: 10px;
     display: flex;
     justify-content: center;
     column-gap: 12px;
+    align-items: center;
+}
+
+.vs {
+    font-size: 24px;
+    color: lightgray;
+}
+
+.p1,
+.p2 {
+    padding: 20px 12px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid darkgray;
+    border-radius: 12px;
+}
+
+.p1-avatar,
+.p2-avatar {
+    border: 0.5px solid darkgray;
+    border-radius: 50%;
+    align-self: center;
+    padding: 10px;
+    background-color: #eeedfe;
+    color: #3c3489;
+}
+
+.p1 button,
+.p2 button {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    border: 0.5px solid red;
+    background-color: #30302e;
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.p1 button:hover,
+.p2 button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #ff746c;
+}
+
+.p1 > *,
+.p2 > * {
+    display: flex;
+    flex-direction: column;
 }
 
 .stats {
     padding: 10px;
     display: flex;
-    border: 2px solid white;
     justify-content: center;
-    column-gap: 12px;
+    column-gap: 80px;
 }
 
-.pvp > div {
-    border: 2px solid green;
+.remove-btn:hover {
+    cursor: pointer;
 }
 
 .player1,
 .player2,
 .players-stat {
-    border: 2px solid blueviolet;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.players-stat {
+    color: darkgray;
+}
+
 .winner {
-    background-color: #262624;
+    background-color: #191919;
     border: 2px solid darkgray;
+    border-radius: 12px;
+    padding: 10px 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    column-gap: 32px;
 }
 /*PLAYERS CATALOG*/
 .player-catalog {
     display: flex;
     flex-direction: column;
-    row-gap: 24px;
-    padding: 18px;
+    /*row-gap: 24px;*/
+    padding: 12px 0px;
 }
 
 .search-bar {
     background-color: #30302e;
     border: 2px solid darkgray;
     display: flex;
-    justify-content: space-around;
-    padding: 10px;
+    justify-content: space-between;
+    padding: 12px 18px;
+    border-radius: 12px;
+    align-items: center;
+}
+
+.search-bar button {
+    font-size: 16px;
+}
+
+.search-bar > span {
+    font-size: 24px;
+}
+
+.clickCompare {
+    padding-top: 2px;
+    font-size: 18px;
+}
+
+.numOfPlayers {
+    color: lightgreen;
+    font-weight: bold;
 }
 
 .role {
     padding: 6px 26px;
-    border: 1px solid darkgray;
+    border: 1px solid lightgray;
     border-radius: 12px;
     background-color: #262624;
     color: white;
+}
+
+.role:hover {
+    cursor: pointer;
+    border-color: darkgray;
 }
 
 .role.active {
@@ -87,11 +171,9 @@ main {
 }
 
 .player-catalog > div:last-child {
-    border: 2px solid greenyellow;
     display: flex;
     flex-direction: column;
     row-gap: 18px;
-    padding: 20px;
 }
 
 .card-container {
@@ -104,12 +186,13 @@ main {
 .avatar-info {
     display: flex;
     justify-content: space-around;
+    column-gap: 12px;
 }
 
 .avatar-info > div {
-    border: 2px solid red;
     display: flex;
     flex-direction: column;
+    column-gap: 4px !important;
 }
 
 .avatar {
@@ -125,25 +208,40 @@ main {
     background-color: #30302e;
     border: 0.5px solid darkgray;
     border-radius: 12px;
-    padding: 8px;
+    padding: 10px !important;
     width: max-content;
     padding: 12px;
 }
 
+.player-card:hover {
+    border-color: white;
+    cursor: pointer;
+}
+
 .player-stats > div {
-    border: 2px solid skyblue;
     display: flex;
     justify-content: space-between;
-    padding: 12px;
+    padding: 4px;
 }
 
 .stat span {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 6px;
+    padding: 4px;
 }
 
-.player-catalog {
-    border: 2px solid white;
+.stat span:first-child {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+.stat span:last-child {
+    font-size: 12px;
+    color: darkgray;
+}
+
+.nameOfWinner {
+    color: lightgreen;
 }
